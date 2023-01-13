@@ -2,6 +2,19 @@
 import kotlin.properties.Delegates
 import kotlin.reflect.KProperty
 
+class Bank{
+    var Bank_Name: String;
+    var Bank_Address: String;
+
+    constructor(BankName:String, Bank_address:String){
+        this.Bank_Name=BankName;
+        this.Bank_Address=Bank_address;
+    }
+
+    override fun toString(): String {
+        return "$Bank_Name and the address is $Bank_Address"
+    }
+}
 
 class Student{
 
@@ -54,4 +67,13 @@ fun main(args:Array<String>){
     stu.age=15;
 
     println(stu.toString());
+
+    var b=Bank("ICCI","Noida Phase 2");
+    b.apply {
+        Bank_Name="kotak";
+        Bank_Address="aligarh"
+    }
+    println(b);
+
+
 }
